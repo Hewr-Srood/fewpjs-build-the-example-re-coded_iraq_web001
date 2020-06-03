@@ -15,6 +15,7 @@ for(const likeBtn of likeBtns){
 
 
 function likebtnEvent(e){
+  console.log(e.target)
   mimicServerCall()
       .then(() => {
         changeHeart(e)
