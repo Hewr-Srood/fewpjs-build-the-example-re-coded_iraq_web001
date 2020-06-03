@@ -29,8 +29,8 @@ function likebtnEvent(e){
 }
 
 function heartChange(e){
+  console.log('hey')
   let heart=e.target;
-console.log('hey')
   if(heart.innerText== EMPTY_HEART){
   heart.innerText= FULL_HEART
   heart.classList.add('activated-heart')}
