@@ -18,7 +18,7 @@ function likebtnEvent(e){
   console.log(e.target.innerText)
   mimicServerCall()
       .then(() => {
-        changeHeart(e)
+        heartChange(e)
       })
       .catch((error) => {
         modal.classList.remove('hidden')
