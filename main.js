@@ -14,7 +14,6 @@ for(const likeBtn of likeBtns){
 }
 
 
-
 function likebtnEvent(e){
   mimicServerCall()
       .then(() => {
@@ -25,9 +24,7 @@ function likebtnEvent(e){
         modalMessage.innerText = "error"
         setTimeout(hideModal, 5000);
       })
-  }
-
-
+}
 
 function heartChange(e){
   let heart=e.target;
@@ -35,6 +32,7 @@ function heartChange(e){
   ?(heart.innerText= FULL_HEART, heart.classList.add('activated-heart'))
   :(heart.innerText= EMPTY_HEART, heart.classList.remove('activated-heart'))
 }
+
 function hidesModalError() {
   modal.classList.add("hidden")
 }
