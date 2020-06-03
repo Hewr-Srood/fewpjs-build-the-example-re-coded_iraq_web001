@@ -31,9 +31,10 @@ function likebtnEvent(e){
 function heartChange(e){
   let heart=e.target;
 console.log('hey')
-  heart.innerText== EMPTY_HEART
-  ?(heart.innerText= FULL_HEART, heart.classList.add('activated-heart'))
-  :(heart.innerText= EMPTY_HEART, heart.classList.remove('activated-heart'))
+  if(heart.innerText== EMPTY_HEART){
+  heart.innerText= FULL_HEART
+  heart.classList.add('activated-heart'}
+  else{heart.innerText= EMPTY_HEART, heart.classList.remove('activated-heart')}
 }
 
 function hidesModalError() {
