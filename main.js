@@ -13,7 +13,6 @@ for(const likeBtn of likeBtns){
   likeBtn.addEventListener('click',likebtnEvent)
 }
 
-
 function likebtnEvent(e){
   mimicServerCall()
   .then(() => {
