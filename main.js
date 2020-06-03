@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded',hidesModalError);
 function heartChange(e){
   let heart=e.target;
   heart.innerText== EMPTY_HEART ?(heart.innerText= FULL_HEART, heart.classList.add('activated-heart'))
-  
+
 }
 document.addEventListener("DOMContentLoaded", (event) => {
   hidesModalError();
