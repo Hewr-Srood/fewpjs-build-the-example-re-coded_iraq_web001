@@ -14,7 +14,7 @@ for(const likeBtn of likeBtns){
     console.log(e.target.innerText)
     mimicServerCall()
         .then(() => {
-          changeHeart()
+          changeHeart(e)
         })
         .catch((error) => {
           modal.classList.remove('hidden')
