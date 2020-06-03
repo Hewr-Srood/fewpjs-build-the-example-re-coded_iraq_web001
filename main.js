@@ -4,6 +4,39 @@ const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
 
+const modal = document.getElementById('modal');
+const hearts = document.getElementsByClassName('like-glyph')
+const likeBtns = document.getElementsByClassName('like')
+const  modalMessage = document.querySelector('#modal-message');
+
+function hidesModalError() {
+  modal.classList.add("hidden")
+}
+function showModalError() {
+  modal.classList.remove("hidden")
+}
+document.addEventListener('DOMContentLoaded')
+hidesModalError()
+
+
+document.addEventListener("DOMContentLoaded", (event) => {
+  document.addEventListener("click", function(event) {
+    const likeStatus = event.target.innerText;
+    let heart = event.target;
+    mimicServerCall()
+    .then( () => {
+      event.target.innerText = event.target.innerText == EMPTY_HEART ? FULL_HEART : EMPTY_HEART;
+      heart.style.color =='red'? heart.style.color ='white': heart.style.color ='red';
+    })
+    .catch ( () => {
+      let errorMessage = document.createElement('p')
+      errorMessage.innerHTML = "You encountered a random server error.  Please try again."
+      modal.appendChild(errorMessage);
+      showModalError();
+      setTimeout(() => {hidesModalError(); modal.removeChild(errorMessage)}, 5000);
+    })
+  })
+});
 
 
 
