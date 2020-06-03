@@ -17,19 +17,18 @@ for(const likeBtn of likeBtns){
 function likebtnEvent(e){
   console.log(e.target.innerText)
   mimicServerCall()
-      .then(() => {
-        heartChange(e)
-      })
-      .catch((error) => {
-        modal.classList.remove('hidden')
-        modalMessage.innerText = "error hidden modal"
-        setTimeout(hidesModalError, 5000);
-      })
+  .then(() => {
+    heartChange(e)
+    })
+  .catch((error) => {
+   modal.classList.remove('hidden')
+   modalMessage.innerText = "error hidden modal"
+   setTimeout(hidesModalError, 5000);
+  })
 }
 
 function heartChange(e){
   let heart=e.target;
-console.log('hey')
   heart.innerText== EMPTY_HEART
   ?(heart.innerText= FULL_HEART, heart.classList.add('activated-heart'))
   :(heart.innerText= EMPTY_HEART, heart.classList.remove('activated-heart'))
