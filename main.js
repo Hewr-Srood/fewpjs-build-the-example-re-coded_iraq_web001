@@ -10,7 +10,7 @@ const  modalMessage = document.querySelector('#modal-message');
 
 document.addEventListener('DOMContentLoaded',hidesModalError);
 for(const likeBtn of likeBtns){
-  likeBtn.addEventListener('click',)
+  likeBtn.addEventListener('click',likebtnEvent)
 }
 
 
@@ -18,11 +18,11 @@ for(const likeBtn of likeBtns){
 function likebtnEvent(e){
   mimicServerCall()
       .then(() => {
-        changeHeart(e.target)
+        changeHeart(e)
       })
       .catch((error) => {
         errorModal.classList.remove('hidden')
-        modalMessage.innerText = error
+        modalMessage.innerText = "error"
         setTimeout(hideModal, 5000);
       })
   }
