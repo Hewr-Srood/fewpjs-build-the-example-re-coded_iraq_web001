@@ -10,33 +10,29 @@ const  modalMessage = document.querySelector('#modal-message');
 
 hidesModalError();
 for(const likeBtn of likeBtns){
-  likeBtn.addEventListener('click',(e)=>{
-    console.log(e.target.innerText)
-    mimicServerCall()
-        .then(() => {
-          heartChange(e)
-        })
-        .catch((error) => {
-          modal.classList.remove('hidden')
-          modalMessage.innerText = "error"
-          setTimeout(hidesModalError, 5000);
-        })
-})
+  likeBtn.addEventListener('click',likebtnEvent)
 }
 
 
 function likebtnEvent(e){
+  console.log(e.target.innerText)
+  mimicServerCall()
+      .then(() => {
+        changeHeart(e)
+      })
+      .catch((error) => {
+        modal.classList.remove('hidden')
+        modalMessage.innerText = "error"
+        setTimeout(hidesModalError, 5000);
+      })
 }
 
 function heartChange(e){
-  console.log('hey')
   let heart=e.target;
-  if(heart.innerText== EMPTY_HEART){
-  heart.innerText= FULL_HEART
-  heart.classList.add('activated-heart')}
-  else{
-    heart.innerText= EMPTY_HEART, heart.classList.remove('activated-heart')
-}
+console.log('hey')
+  heart.innerText== EMPTY_HEART
+  ?(heart.innerText= FULL_HEART, heart.classList.add('activated-heart'))
+  :(heart.innerText= EMPTY_HEART, heart.classList.remove('activated-heart'))
 }
 
 function hidesModalError() {
@@ -61,6 +57,6 @@ function mimicServerCall(url="http://mimicServer.example.com", config={}) {
       } else {
         resolve("Pretend remote server notified of action!");
       }
-    }, 500);
+    }, 300);
   });
 }
