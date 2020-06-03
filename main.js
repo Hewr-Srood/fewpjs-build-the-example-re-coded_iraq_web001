@@ -15,15 +15,9 @@ function hidesModalError() {
 function showModalError() {
   modal.classList.remove("hidden")
 }
-document.addEventListener('DOMContentLoaded',init)
-function init(){
-hidesModalError()
-
-}
-
-
 
 document.addEventListener("DOMContentLoaded", (event) => {
+  hidesModalError();
   document.addEventListener("click", function(event) {
     const likeStatus = event.target.innerText;
     let heart = event.target;
