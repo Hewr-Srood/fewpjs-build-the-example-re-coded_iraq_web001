@@ -3,15 +3,13 @@ const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
-
 const modal = document.getElementById('modal');
 const hearts = document.getElementsByClassName('like-glyph')
 const likeBtns = document.getElementsByClassName('like')
 const  modalMessage = document.querySelector('#modal-message');
 
-
-
 document.addEventListener('DOMContentLoaded',hidesModalError);
+
 function heartChange(e){
   let heart=e.target;
   heart.innerText== EMPTY_HEART
