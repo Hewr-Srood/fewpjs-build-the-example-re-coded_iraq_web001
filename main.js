@@ -10,7 +10,8 @@ const  modalMessage = document.querySelector('#modal-message');
 
 hidesModalError();
 for(const likeBtn of likeBtns){
-  likeBtn.addEventListener('click',()=>{  console.log(e.target.innerText)
+  likeBtn.addEventListener('click',()=>{  
+    console.log(e.target.innerText)
     mimicServerCall()
         .then(() => {
           changeHeart(e)
