@@ -15,8 +15,12 @@ function hidesModalError() {
 function showModalError() {
   modal.classList.remove("hidden")
 }
-document.addEventListener('DOMContentLoaded')
+document.addEventListener('DOMContentLoaded',init)
+function init(){
 hidesModalError()
+  
+}
+
 
 
 document.addEventListener("DOMContentLoaded", (event) => {
