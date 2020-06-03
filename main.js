@@ -10,21 +10,21 @@ const  modalMessage = document.querySelector('#modal-message');
 
 hidesModalError();
 for(const likeBtn of likeBtns){
-  likeBtn.addEventListener('click',likebtnEvent)
+  likeBtn.addEventListener('click',()=>{  console.log(e.target.innerText)
+    mimicServerCall()
+        .then(() => {
+          changeHeart(e)
+        })
+        .catch((error) => {
+          modal.classList.remove('hidden')
+          modalMessage.innerText = "error"
+          setTimeout(hidesModalError, 5000);
+        })
+})
 }
 
 
 function likebtnEvent(e){
-  console.log(e.target.innerText)
-  mimicServerCall()
-      .then(() => {
-        changeHeart(e)
-      })
-      .catch((error) => {
-        modal.classList.remove('hidden')
-        modalMessage.innerText = "error"
-        setTimeout(hidesModalError, 5000);
-      })
 }
 
 function heartChange(e){
