@@ -22,7 +22,7 @@ function likebtnEvent(e){
       .catch((error) => {
         modal.classList.remove('hidden')
         modalMessage.innerText = "error"
-        setTimeout(hideModal, 5000);
+        setTimeout(hidesModalError, 5000);
       })
 }
 
