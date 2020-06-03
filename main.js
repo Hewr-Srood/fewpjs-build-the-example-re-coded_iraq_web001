@@ -9,41 +9,21 @@ const hearts = document.getElementsByClassName('like-glyph')
 const likeBtns = document.getElementsByClassName('like')
 const  modalMessage = document.querySelector('#modal-message');
 
+
+
+document.addEventListener('DOMContentLoaded',hidesModalError);
+function heartChange(e){
+  let heart=e.target;
+  heart.innerText== EMPTY_HEART
+  ?(heart.innerText= FULL_HEART, heart.classList.add('activated-heart'))
+  :(heart.innerText= EMPTY_HEART, heart.classList.remove('activated-heart'))
+}
 function hidesModalError() {
   modal.classList.add("hidden")
 }
 function showModalError() {
   modal.classList.remove("hidden")
 }
-
-document.addEventListener('DOMContentLoaded',hidesModalError);
-
-function heartChange(e){
-  let heart=e.target;
-  heart.innerText== EMPTY_HEART
-  ?(heart.innerText= FULL_HEART, heart.classList.add('activated-heart'))
-  :(heart.innerText= EMPTY_HEART, heart.classList.remove('activated-heart'))
-
-}
-document.addEventListener("DOMContentLoaded", (event) => {
-  hidesModalError();
-  document.addEventListener("click", function(event) {
-    const likeStatus = event.target.innerText;
-    let heart = event.target;
-    mimicServerCall()
-    .then( () => {
-      event.target.innerText = event.target.innerText == EMPTY_HEART ? FULL_HEART : EMPTY_HEART;
-      heart.style.color =='red'? heart.style.color ='white': heart.style.color ='red';
-    })
-    .catch ( () => {
-      let errorMessage = document.createElement('p')
-      errorMessage.innerHTML = "You encountered a random server error.  Please try again."
-      modal.appendChild(errorMessage);
-      showModalError();
-      setTimeout(() => {hidesModalError(); modal.removeChild(errorMessage)}, 5000);
-    })
-  })
-});
 
 
 
