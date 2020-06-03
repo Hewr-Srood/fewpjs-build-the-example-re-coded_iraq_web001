@@ -8,7 +8,7 @@ const hearts = document.getElementsByClassName('like-glyph')
 const likeBtns = document.getElementsByClassName('like')
 const  modalMessage = document.querySelector('#modal-message');
 
-document.addEventListener('DOMContentLoaded',hidesModalError);
+hidesModalError();
 for(const likeBtn of likeBtns){
   likeBtn.addEventListener('click',likebtnEvent)
 }
