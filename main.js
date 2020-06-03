@@ -20,7 +20,7 @@ function likebtnEvent(e){
         changeHeart(e)
       })
       .catch((error) => {
-        errorModal.classList.remove('hidden')
+        modal.classList.remove('hidden')
         modalMessage.innerText = "error"
         setTimeout(hideModal, 5000);
       })
