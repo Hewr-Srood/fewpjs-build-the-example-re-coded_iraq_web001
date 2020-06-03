@@ -9,6 +9,25 @@ const likeBtns = document.getElementsByClassName('like')
 const  modalMessage = document.querySelector('#modal-message');
 
 document.addEventListener('DOMContentLoaded',hidesModalError);
+for(const likeBtn of likeBtns){
+  likeBtn.addEventListener('click',)
+}
+
+
+
+function likebtnEvent(e){
+  mimicServerCall()
+      .then(() => {
+        changeHeart(e.target)
+      })
+      .catch((error) => {
+        errorModal.classList.remove('hidden')
+        modalMessage.innerText = error
+        setTimeout(hideModal, 5000);
+      })
+  }
+
+
 
 function heartChange(e){
   let heart=e.target;
