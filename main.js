@@ -61,6 +61,6 @@ function mimicServerCall(url="http://mimicServer.example.com", config={}) {
       } else {
         resolve("Pretend remote server notified of action!");
       }
-    }, 5000);
+    }, 500);
   });
 }
